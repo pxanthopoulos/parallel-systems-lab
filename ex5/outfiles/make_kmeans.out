@@ -1,0 +1,14 @@
+g++ -O3 -I../helper_functions  -c seq_kmeans.c -o ../objdir/seq_kmeans.o
+g++ -O3 -I../helper_functions  -c main_sec.c -o ../objdir/main_sec.o
+g++ -O3 -I../helper_functions  -c ../helper_functions/file_io.c -o ../objdir/file_io.o
+g++ -O3 -I../helper_functions  -c ../helper_functions/util.c -o ../objdir/util.o
+g++ -O3 -I../helper_functions  ../objdir/seq_kmeans.o ../objdir/main_sec.o ../objdir/file_io.o ../objdir/util.o -o ../bin/kmeans_seq 
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  -c cuda_kmeans_naive.cu -o ../objdir/cuda_kmeans_naive.o
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  -c main_gpu.cu -o ../objdir/main_gpu.o
+g++ -O3 -I../helper_functions  -c ../helper_functions/error.c -o ../objdir/error.o
+g++ -O3 -I../helper_functions  -c ../helper_functions/alloc.c -o ../objdir/alloc.o
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  ../objdir/cuda_kmeans_naive.o ../objdir/main_gpu.o ../objdir/file_io.o ../objdir/util.o ../objdir/error.o ../objdir/alloc.o ../objdir/seq_kmeans.o -o ../bin/kmeans_cuda_naive  
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  -c cuda_kmeans_transpose.cu -o ../objdir/cuda_kmeans_transpose.o
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  ../objdir/cuda_kmeans_transpose.o ../objdir/main_gpu.o ../objdir/file_io.o ../objdir/util.o ../objdir/error.o ../objdir/alloc.o ../objdir/seq_kmeans.o -o ../bin/kmeans_cuda_transpose  
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  -c cuda_kmeans_shared.cu -o ../objdir/cuda_kmeans_shared.o
+/usr/local/cuda-12.1/bin/nvcc -O3 -I../helper_functions  --ptxas-options=-v -arch=sm_60  ../objdir/cuda_kmeans_shared.o ../objdir/main_gpu.o ../objdir/file_io.o ../objdir/util.o ../objdir/error.o ../objdir/alloc.o ../objdir/seq_kmeans.o -o ../bin/kmeans_cuda_shared  

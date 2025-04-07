@@ -1,0 +1,20 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dataset_size = 256.00 MB    numObjs = 16777216    numCoords = 2    numClusters = 16, block_size = 128
+
+
+|-----------Shared GPU Kmeans------------|
+
+t_alloc: 250.289917 ms
+
+t_alloc_gpu: 148.416042 ms
+
+t_get_gpu: 76.473951 ms
+
+nloops = 10  : total = 722.795010 ms
+	-> t_loop_avg = 72.279501 ms
+	-> t_loop_min = 67.339182 ms
+	-> t_loop_max = 107.465982 ms
+
+|-------------------------------------------|

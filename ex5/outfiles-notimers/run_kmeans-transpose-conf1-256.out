@@ -1,0 +1,20 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dataset_size = 256.00 MB    numObjs = 16777216    numCoords = 2    numClusters = 16, block_size = 256
+
+
+|-----------Transpose GPU Kmeans------------|
+
+t_alloc: 249.894142 ms
+
+t_alloc_gpu: 135.525942 ms
+
+t_get_gpu: 75.737000 ms
+
+nloops = 10  : total = 707.981110 ms
+	-> t_loop_avg = 70.798111 ms
+	-> t_loop_min = 65.680027 ms
+	-> t_loop_max = 103.829145 ms
+
+|-------------------------------------------|

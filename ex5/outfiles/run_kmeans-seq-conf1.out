@@ -1,0 +1,17 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dataset_size = 256.00 MB    numObjs = 16777216    numCoords = 2    numClusters = 16
+
+
+|-------------Sequential Kmeans-------------|
+
+t_alloc: 45.525074 ms
+
+nloops = 10  : total = 9815.672874 ms
+	-> t_loop_avg = 981.567287 ms
+	-> t_loop_min = 960.788012 ms
+	-> t_loop_max = 1071.552992 ms
+
+|-------------------------------------------|
+Filename Execution_logs/Sz-256_Coo-2_Cl-16.csv did not open succesfully, no logging performed

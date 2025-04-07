@@ -1,0 +1,36 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dataset_size = 256.00 MB    numObjs = 16777216    numCoords = 2    numClusters = 16, block_size = 64
+
+
+|-------------Naive GPU Kmeans--------------|
+
+t_alloc: 45.596123 ms
+
+t_alloc_gpu: 156.549931 ms
+
+t_get_gpu: 82.471848 ms
+
+t_cpu_gpu_trans_avg: 0.034738 ms
+
+t_cpu_gpu_trans_total: 0.347376 ms
+
+t_gpu_part_avg: 32.248425 ms
+
+t_gpu_part_total: 322.484255 ms
+
+t_gpu_cpu_trans_avg: 18.569016 ms
+
+t_gpu_cpu_trans_total: 185.690165 ms
+
+t_cpu_part_avg: 72.434688 ms
+
+t_cpu_part_total: 724.346876 ms
+
+nloops = 10  : total = 1232.872963 ms
+	-> t_loop_avg = 123.287296 ms
+	-> t_loop_min = 111.547947 ms
+	-> t_loop_max = 201.668024 ms
+
+|-------------------------------------------|
